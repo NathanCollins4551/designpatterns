@@ -17,6 +17,7 @@ pipeline {
             steps {
                 echo 'Testing version ${parameters.VERSION}'
                 sh './gradlew test'
+                junit 'src/reports/*-jupiter.xml'
             }
             
         }
